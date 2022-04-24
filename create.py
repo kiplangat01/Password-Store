@@ -55,4 +55,19 @@ def userlogic():
         username = input("enter a username") 
         while True:
             print("GP --generate password \n TP type your own password")
+            passwordchosen = input().lower().strip()
+            if passwordchosen == "tp":
+               password = input("enter password \n ")
+               break
+            elif passwordchosen == "gp":
+                password = genpassword()
+                break 
+            else: 
+                print("invalid password try again")
+                
+        saveuser(createuser)
+        
+  
+        
+    
         
