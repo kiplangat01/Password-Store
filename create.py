@@ -50,3 +50,9 @@ def userlogic():
     userinput = input("").lower().strip()
     if userinput == "ca": 
         print("signup")
+        print("-"*50)
+
+        username = input("enter a username") 
+        while True:
+            print("GP --generate password \n TP type your own password")
+        
