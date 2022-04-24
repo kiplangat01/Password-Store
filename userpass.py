@@ -1,6 +1,6 @@
 import random
 import string
-import pyperclip
+
 
 from httplib2 import Credentials
 
@@ -80,7 +80,7 @@ class credentials:
 
     def coppypassword(cls, account):
         found = Credentials.findcredentials(account)
-        pyperclip.copy(found.password)
+        # pyperclip.copy(found.password)
     
     @classmethod
 

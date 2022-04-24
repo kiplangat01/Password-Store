@@ -65,8 +65,10 @@ def userlogic():
             else: 
                 print("invalid password try again")
                 
-        saveuser(createuser)
-        
+        saveuser(createuser(username, password))
+
+        print("\n")        
+        print(f"your account details are {username} and {password} \n")
   
         
     
