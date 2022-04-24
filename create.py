@@ -52,7 +52,7 @@ def userlogic():
         print("signup")
         print("-"*50)
 
-        username = input("enter a username") 
+        username = input("enter a username:") 
         while True:
             print("GP --generate password \n TP type your own password")
             passwordchosen = input().lower().strip()
@@ -70,6 +70,16 @@ def userlogic():
         print("\n")        
         print(f"your account details are {username}  {password} \n")
 
+
+    elif userinput == "li":
+        print("-"*70) 
+        print("enter your password and username to login \n")
+        username = input("enter username:")
+        password = input("enter password")
+
+        login = verifyuser(username, password)
+        if verifyuser == login:
+            print(f"welcome to password locker {username}")
 
 
 
