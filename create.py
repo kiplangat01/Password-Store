@@ -29,4 +29,24 @@ def displaycredentials():
     return credentials.displaycredentials()
 
 def deletecredentials(credent):
-    credent.deletecredetials
+    credent.deletecredetials()
+
+def findcredentials(account):
+    return credentials.findcredentials(account)
+
+def exist(account):
+    return credentials.credentialsexist(account)
+
+def genpassword():
+    passgen = credentials.generatePassword
+    return passgen
+
+def coppy(account):
+    return credentials.coppypassword(account)
+
+def userlogic():
+    print("welcome too password locker \n to proceed enter the following \n -ca --create account \n -lg --login \n")
+
+    userinput = input("").lower().strip()
+    if userinput == "ca": 
+        print("signup")
