@@ -38,7 +38,7 @@ def exist(account):
     return credentials.credentialsexist(account)
 
 def genpassword():
-    passgen = credentials.generatePassword
+    passgen = credentials.generatePassword()
     return passgen
 
 def coppy(account):
@@ -68,7 +68,14 @@ def userlogic():
         saveuser(createuser(username, password))
 
         print("\n")        
-        print(f"your account details are {username} and {password} \n")
+        print(f"your account details are {username}  {password} \n")
+
+
+
+
+
+if __name__ == '__main__':
+    userlogic()
   
         
     
