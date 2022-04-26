@@ -14,7 +14,7 @@
 + [Authors Info](#author-Info)
 
 ## Description
-<p>This is  a website that shows my 1st moringa project.It contains all styles used and deployments of the project.</p>
+<p>This is  a website that shows my 1st pyhon project.It contains all classes and.</p>
 
 
 ### instruction 

@@ -80,8 +80,11 @@ def userlogic():
         login = verifyuser(username, password)
         if verifyuser == login:
             print(f"welcome to password locker {username}")
+ 
 
-
+    while True:
+        print("Use these short codes:\n CC - Create a new credential \n DC - Display Credentials \n FC - Find a credential \n GP - Generate A randomn password \n D - Delete credential \n EX - Exit the application \n")
+             
 
 
 if __name__ == '__main__':
