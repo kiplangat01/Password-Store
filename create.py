@@ -1,3 +1,4 @@
+from lib2to3.pytree import _Results
 from userpass import user, credentials
 
 
@@ -84,7 +85,50 @@ def userlogic():
 
     while True:
         print("Use these short codes:\n CC - Create a new credential \n DC - Display Credentials \n FC - Find a credential \n GP - Generate A randomn password \n D - Delete credential \n EX - Exit the application \n")
-             
+        option = input().lower().strip()
+        if option == "cc": 
+            print("create new credential")
+            print("1"*50)
+            print("account name:")
+            account = input().lower
+            print("username:")
+            username = input()
+            while True:
+             print("will you type your own password TP or generate your password GP")
+             passwordchoice = input().lower().strip()
+             if passwordchoice == "tp":
+                    password = input("enter your password")
+                    break
+             elif passwordchoice == "gp":
+                 password = genpassword()
+             else:
+                 print("invalid option")
+            savingcredentials(creatingnewcredential(account,  username, password ))
+            print("\n")
+            print(f"you {account}: {username}: {password}")
+        elif option == "dc":
+            if displaycredentials():
+                print("here are your account details")
+                print("\n")
+                for account in displaycredentials():
+                    print(f"your account are {account.account} {account.username} {account.password}")
+            else:
+                print("you dont have any credentials yet")
+
+        elif option == "fc":
+            print("enter yaiur account name to search your details")
+            searchdetails = input().lower()
+            if findcredentials(searchdetails):
+                searchresults = findcredentials(searchdetails)
+
+
+
+
+                
+  
+               
+    
+
 
 
 if __name__ == '__main__':
