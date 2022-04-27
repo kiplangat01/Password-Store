@@ -2,7 +2,7 @@ import random
 import string
 
 
-from httplib2 import Credentials
+# from httplib2 import Credentials
 
      
 
@@ -79,7 +79,7 @@ class credentials:
     @classmethod
 
     def coppypassword(cls, account):
-        found = Credentials.findcredentials(account)
+        found = credentials.findcredentials(account)
         # pyperclip.copy(found.password)
     
     @classmethod
@@ -88,9 +88,8 @@ class credentials:
         return cls.credentials_list
 
     @classmethod
-
-    def generatePassword(stringLength=9):
-        
+    def generatePassword():
+        stringLength=9
         """Generate a random password string of letters and digits and special characters"""
         password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "k&%)@#$"
         return ''.join(random.choice(password) for i in range(stringLength))

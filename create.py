@@ -1,4 +1,5 @@
-from lib2to3.pytree import _Results
+# from lib2to3.pytree import _Results
+from operator import ge
 from userpass import user, credentials
 
 
@@ -38,9 +39,14 @@ def findcredentials(account):
 def exist(account):
     return credentials.credentialsexist(account)
 
-def genpassword():
-    passgen = credentials.generatePassword()
-    return passgen
+
+def generate_Password():
+    '''
+    generates a random password for the user.
+    '''
+    auto_password=credentials.generatePassword()
+    return auto_password
+
 
 def coppy(account):
     return credentials.coppypassword(account)
@@ -52,7 +58,7 @@ def userlogic():
     if userinput == "ca": 
         print("signup")
         print("-"*50)
-
+ 
         username = input("enter a username:") 
         while True:
             print("GP --generate password \n TP type your own password")
@@ -61,7 +67,7 @@ def userlogic():
                password = input("enter password \n ")
                break
             elif passwordchosen == "gp":
-                password = genpassword()
+                password = generate_Password()
                 break 
             else: 
                 print("invalid password try again")
@@ -100,7 +106,7 @@ def userlogic():
                     password = input("enter your password")
                     break
              elif passwordchoice == "gp":
-                 password = genpassword()
+                 password = generate_Password()
              else:
                  print("invalid option")
             savingcredentials(creatingnewcredential(account,  username, password ))
@@ -120,9 +126,31 @@ def userlogic():
             searchdetails = input().lower()
             if findcredentials(searchdetails):
                 searchresults = findcredentials(searchdetails)
+                print("\n")
+                print(f"your result details are {searchresults.account} {searchresults.username} {searchresults.password}")
+            else:
+                print("we are not able to find your details")
+        elif option == "d":
+            print("enter the credential you want to delite")
+            searchterm = input().lower()
+            if findcredentials(searchterm):
+                findsearch = findcredentials(searchterm)
+                findsearch.deletecredentials()
+                print("\n")
+                print(f"your account {findsearch.account} has been delited successfully")
+            else:
+                print("the credentials you want to delite does not exist")
 
+        elif option == "gp":
+            print("generate password")
+            password = generate_Password()
+            print(f"your password have been created successufully")
 
-
+        elif option == "ex":
+            print("thank you for visiting our application")
+            break
+        else:
+            print("you entered an invalid option please try again")
 
                 
   
